@@ -1,0 +1,174 @@
+\doxysection{Mat.\+h}
+\hypertarget{_mat_8h_source}{}\label{_mat_8h_source}\mbox{\hyperlink{_mat_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_MAT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_MAT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vec_8h}{Vec.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ vector\ subtraction\ c\ =\ a\ -\/\ b}}
+\DoxyCodeLine{00018\ std::vector<double>\ \mbox{\hyperlink{_mat_8h_a2ec220a686d1089d40359d67ba5b99f8}{operator-\/}}(\textcolor{keyword}{const}\ std::vector<double>\&\ a,\ \textcolor{keyword}{const}\ std::vector<double>\&\ b)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ std::vector<double>\ c(a.size());}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ a.size();\ i++)\ c[i]\ =\ a[i]\ -\/\ b[i];}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{return}\ c;}
+\DoxyCodeLine{00022\ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ vector\ addition\ c\ =\ a\ +\ b}}
+\DoxyCodeLine{00034\ std::vector<double>\ \mbox{\hyperlink{_mat_8h_ad2db6cb36e2e4457d4eeb284031eac91}{operator+}}(\textcolor{keyword}{const}\ std::vector<double>\&\ a,\ \textcolor{keyword}{const}\ std::vector<double>\&\ b)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ std::vector<double>\ c(a.size());}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ a.size();\ i++)\ c[i]\ =\ a[i]\ +\ b[i];}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{return}\ c;}
+\DoxyCodeLine{00038\ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ vector\ scaling\ c\ =\ a\ *\ s}}
+\DoxyCodeLine{00050\ std::vector<double>\ \mbox{\hyperlink{_mat_8h_a30a0abc9a8b1490d3b3dd582e8bafad6}{operator*}}(\textcolor{keyword}{const}\ std::vector<double>\&\ a,\ \textcolor{keywordtype}{double}\ s)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ std::vector<double>\ c(a.size());}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ a.size();\ i++)\ c[i]\ =\ a[i]\ *\ s;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ c;}
+\DoxyCodeLine{00054\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ matrix\ base\ class,\ specifies\ the\ interface\ to\ be\ implemented}}
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mat}{Mat}}\ \{}
+\DoxyCodeLine{00062\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_mat_a1dce05d23c8e477397200f4b5639818c}{Mat}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}})\ :\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}}\{\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}}\ \}\ \{\}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_mat_a9e1dcdf014562798330148bb29c2f5af}{\string~Mat}}()\ \{\}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{class_mat_a0b3602ac9d9f11e15db537277e153d0b}{operator()}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\ =\ 0;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_mat_a8e66bf7344562f3adec2b47a22b9489c}{operator()}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_mat_a2ebc142b7716103f6ff5dc62795345b8}{dot}}(\textcolor{keyword}{const}\ std::vector<double>\&\ x,\ \textcolor{keywordtype}{size\_t}\ r)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_mat_afc31b162b490efbcc30c4189695ae704}{memsize}}()\ =\ 0;\ \ \textcolor{comment}{//\ matrix\ size\ in\ bytes}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}};\ \ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{friend}\ std::vector<double>\ \mbox{\hyperlink{class_mat_aa85326505f32cb0cf01a3cb745621447}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_mat}{Mat}}\&\ A,\ \textcolor{keyword}{const}\ std::vector<double>\&\ x)\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ std::vector<double>\ b(A.\mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}});}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ u\ =\ 0;\ u\ <\ A.\mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}};\ u++)}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ b[u]\ =\ A.\mbox{\hyperlink{class_mat_a2ebc142b7716103f6ff5dc62795345b8}{dot}}(x,\ u);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ b;}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{comment}{/*\ Dense\ matrix,\ only\ good\ for\ small\ matrices!\ */}}
+\DoxyCodeLine{00132\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dense_mat}{DenseMat}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_mat}{Mat}}\ \{}
+\DoxyCodeLine{00133\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{class_dense_mat_a88baa8e65e5b3491c29e143c78399982}{DenseMat}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}})\ :\ \mbox{\hyperlink{class_mat}{Mat}}\{\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}}\ \}\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ memory\ for\ coefficients}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dense_mat_a5f30b09ddef3cb007b5e3ee755bbdddb}{a}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}*[\mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}}];}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}};\ i++)}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dense_mat_a5f30b09ddef3cb007b5e3ee755bbdddb}{a}}[i]\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[\mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}}];}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ initialize\ all\ to\ zero}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}};\ i++)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}};\ j++)}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dense_mat_a5f30b09ddef3cb007b5e3ee755bbdddb}{a}}[i][j]\ =\ 0;}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{class_dense_mat_a55a9cd563f5c9a8a7ecc3f9844a2e844}{\string~DenseMat}}()\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}};\ i++)}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{class_dense_mat_a5f30b09ddef3cb007b5e3ee755bbdddb}{a}}[i];}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{class_dense_mat_a5f30b09ddef3cb007b5e3ee755bbdddb}{a}};}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{class_dense_mat_a31fbbb963f922c8a6e55c664af85012b}{operator()}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_dense_mat_a5f30b09ddef3cb007b5e3ee755bbdddb}{a}}[i][j];\ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dense_mat_a728aef3c097f1df6aa91b244a3de373c}{operator()}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_dense_mat_a5f30b09ddef3cb007b5e3ee755bbdddb}{a}}[i][j];\ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dense_mat_a387e37150269919b803d4e311769cfa9}{dot}}(\textcolor{keyword}{const}\ std::vector<double>\&\ x,\ \textcolor{keywordtype}{size\_t}\ r)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sum\ =\ 0;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ c\ =\ 0;\ c\ <\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}};\ c++)}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ \mbox{\hyperlink{class_dense_mat_a5f30b09ddef3cb007b5e3ee755bbdddb}{a}}[r][c]\ *\ x[c];}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sum;}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_dense_mat_a1d72219941f646e12d208d619deaf26c}{memsize}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}}\ *\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}}\ *\ \textcolor{keyword}{sizeof}(double);\ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{double}**\ \mbox{\hyperlink{class_dense_mat_a5f30b09ddef3cb007b5e3ee755bbdddb}{a}};\ \ }
+\DoxyCodeLine{00203\ \};}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \textcolor{comment}{/*\ Sparse\ matrix\ with\ up\ to\ 7\ non-\/zero\ values\ per\ row\ */}}
+\DoxyCodeLine{00210\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sparse_mat}{SparseMat}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_mat}{Mat}}\ \{}
+\DoxyCodeLine{00211\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{class_sparse_mat_a1d25eb68db7b1a5ee5adecdcb7ebffa2}{SparseMat}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}})\ :\ \mbox{\hyperlink{class_mat}{Mat}}\{\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}}\ \}\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ memory\ for\ coefficients}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sparse_mat_ad75a7dfacc9848425487266af5c6cc7f}{a}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}*[\mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}}];}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}};\ i++)}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sparse_mat_ad75a7dfacc9848425487266af5c6cc7f}{a}}[i]\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[\mbox{\hyperlink{class_sparse_mat_a23664a28710ce2705691e256950e249b}{max\_vals}}];}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ memory\ for\ column\ indexes}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}{c}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}*[\mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}}];}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}};\ i++)}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}{c}}[i]\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[\mbox{\hyperlink{class_sparse_mat_a23664a28710ce2705691e256950e249b}{max\_vals}}];}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ clear\ data,\ column\ set\ to\ -\/1\ are\ not\ set}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}};\ i++)}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{class_sparse_mat_a23664a28710ce2705691e256950e249b}{max\_vals}};\ j++)\ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}{c}}[i][j]\ =\ -\/1;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sparse_mat_ad75a7dfacc9848425487266af5c6cc7f}{a}}[i][j]\ =\ 0;}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{class_sparse_mat_a2582d3c6df2b844e9d255552237e1c6d}{\string~SparseMat}}()\ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}};\ i++)}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{class_sparse_mat_ad75a7dfacc9848425487266af5c6cc7f}{a}}[i];}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{class_sparse_mat_ad75a7dfacc9848425487266af5c6cc7f}{a}};}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}};\ i++)}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}{c}}[i];}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}{c}};}
+\DoxyCodeLine{00247\ \ \ \ \ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{class_sparse_mat_ae5c978f85312b2564bc6a21ff875d8e1}{operator()}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ search\ for\ the\ sparse\ column\ corresponding\ to\ full\ matrix\ column\ j}}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ v\ =\ 0;\ v\ <\ \mbox{\hyperlink{class_sparse_mat_a23664a28710ce2705691e256950e249b}{max\_vals}};\ v++)\ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ did\ we\ reach\ an\ empty\ slot?\ If\ so,\ make\ it\ correspond\ to\ column\ j}}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}{c}}[i][v]\ <\ 0)\ \mbox{\hyperlink{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}{c}}[i][v]\ =\ j;}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ does\ this\ sparse\ column\ map\ to\ j?\ If\ so,\ return\ the\ coeff}}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}{c}}[i][v]\ ==\ j)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sparse_mat_ad75a7dfacc9848425487266af5c6cc7f}{a}}[i][v];}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ getting\ here\ implies\ that\ all\ max\_val\ slots\ are\ already\ occupied\ by\ columns\ other\ than\ j}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Sparse\ matrix\ too\ small!"{}});}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sparse_mat_ad75a7dfacc9848425487266af5c6cc7f}{a}}[i][0];\ \ \textcolor{comment}{//\ just\ to\ avoid\ a\ warning}}
+\DoxyCodeLine{00269\ \ \ \ \ \}}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_sparse_mat_adc8ffd373ab90177417ce8be6cc53a00}{operator()}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ search\ for\ the\ sparse\ column\ corresponding\ to\ full\ matrix\ column\ j}}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ v\ =\ 0;\ v\ <\ \mbox{\hyperlink{class_sparse_mat_a23664a28710ce2705691e256950e249b}{max\_vals}};\ v++)\ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ did\ we\ reach\ an\ empty\ slot?\ If\ so,\ make\ it\ correspond\ to\ column\ j}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}{c}}[i][v]\ <\ 0)\ \mbox{\hyperlink{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}{c}}[i][v]\ =\ j;}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ does\ this\ sparse\ column\ map\ to\ j?\ If\ so,\ return\ the\ coeff}}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}{c}}[i][v]\ ==\ j)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_sparse_mat_ad75a7dfacc9848425487266af5c6cc7f}{a}}[i][v];}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ getting\ here\ implies\ that\ all\ max\_val\ slots\ are\ already\ occupied\ by\ columns\ other\ than\ j}}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ \ \textcolor{comment}{//\ If\ not\ found,\ return\ 0\ (assume\ implicit\ zero)}}
+\DoxyCodeLine{00290\ \ \ \ \ \}}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_sparse_mat_a8e6fc1b45c361ae9aec06be2d68d9eee}{dot}}(\textcolor{keyword}{const}\ std::vector<double>\&\ x,\ \textcolor{keywordtype}{size\_t}\ r)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sum\ =\ 0;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ loop\ up\ to\ max\_vals\ time\ and\ until\ c[r][v]\ becomes\ negative}}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ v\ =\ 0;\ v\ <\ max\_vals\ \&\&\ c[r][v]\ >=\ 0;\ v++)}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ \mbox{\hyperlink{class_sparse_mat_ad75a7dfacc9848425487266af5c6cc7f}{a}}[r][v]\ *\ x[\mbox{\hyperlink{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}{c}}[r][v]];\ \ \textcolor{comment}{//\ c[v]\ is\ effective\ the\ "{}j"{}\ in\ full\ matrix}}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sum;}
+\DoxyCodeLine{00307\ \ \ \ \ \}}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_sparse_mat_a4e84275bb5cda98bd1f862ef33f048c7}{memsize}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}}\ *\ \mbox{\hyperlink{class_sparse_mat_a23664a28710ce2705691e256950e249b}{max\_vals}}\ *\ \textcolor{keyword}{sizeof}(double);\ \}}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_sparse_mat_a23664a28710ce2705691e256950e249b}{max\_vals}}\ =\ 7;\ \ \ }
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordtype}{double}**\ \mbox{\hyperlink{class_sparse_mat_ad75a7dfacc9848425487266af5c6cc7f}{a}};\ \ }
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordtype}{int}**\ \mbox{\hyperlink{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}{c}};\ \ \ \ }
+\DoxyCodeLine{00320\ \};}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

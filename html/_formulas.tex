@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{iftex}
+\usepackage{ifthen}
+\usepackage{epsfig}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\ifPDFTeX
+\usepackage{newunicodechar}
+  \makeatletter
+    \def\doxynewunicodechar#1#2{%
+    \@tempswafalse
+    \edef\nuc@tempa{\detokenize{#1}}%
+    \if\relax\nuc@tempa\relax
+      \nuc@emptyargerr
+    \else
+      \edef\@tempb{\expandafter\@car\nuc@tempa\@nil}%
+      \nuc@check
+      \if@tempswa
+        \@namedef{u8:\nuc@tempa}{#2}%
+      \fi
+    \fi
+  }
+  \makeatother
+  \doxynewunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \doxynewunicodechar{²}{${}^{2}$}% Superscript two
+  \doxynewunicodechar{³}{${}^{3}$}% Superscript three
+
+\fi
+\pagestyle{empty}
+\begin{document}
+\[
+\textbf{A} \vec{x} = \vec{b}
+\]
+\pagebreak
+
+$ c = a - b = <a_1 - b_1, a_2 - b_2, a_3 - b_3> $
+\pagebreak
+
+$ c = a + b = <a_1 + b_1, a_2 + b_2, a_3 + b_3> $
+\pagebreak
+
+$ c = a * s = <a_1 * s, a_2 * s, a_3 * s> $
+\pagebreak
+
+$ \text{dot}(x, r) = \sum_{c=0}^{nu-1} A[r][c] \cdot x[c] $
+\pagebreak
+
+$ b = A \cdot x $
+\pagebreak
+
+$ \text{dot}(x, r) = \sum_{v=0}^{\text{max\_vals}-1} a[r][v] \cdot x[c[r][v]] $
+\pagebreak
+
+$ \vec{v1} + \vec{v2} = (v1_x + v2_x, v1_y + v2_y, v1_z + v2_z) $
+\pagebreak
+
+$ \vec{v1} - \vec{v2} = (v1_x - v2_x, v1_y - v2_y, v1_z - v2_z) $
+\pagebreak
+
+$ \vec{v} * s = (v_x * s, v_y * s, v_z * s) $
+\pagebreak
+
+\end{document}

@@ -1,0 +1,203 @@
+\doxysection{Dense\+Mat Class Reference}
+\hypertarget{class_dense_mat}{}\label{class_dense_mat}\index{DenseMat@{DenseMat}}
+
+
+Dense matrix class that implements the \doxylink{class_mat}{Mat} interface.  
+
+
+
+
+{\ttfamily \#include $<$Mat.\+h$>$}
+
+
+
+Inheritance diagram for Dense\+Mat\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{class_dense_mat__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dense\+Mat\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{class_dense_mat__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dense_mat_a88baa8e65e5b3491c29e143c78399982}{Dense\+Mat}} (size\+\_\+t \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_dense_mat}{Dense\+Mat} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dense_mat_a55a9cd563f5c9a8a7ecc3f9844a2e844}{\texorpdfstring{$\sim$}{\string~}\+Dense\+Mat}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_dense_mat}{Dense\+Mat} object. \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{class_dense_mat_a31fbbb963f922c8a6e55c664af85012b}{operator()}} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Accesses an element in the matrix. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dense_mat_a728aef3c097f1df6aa91b244a3de373c}{operator()}} (int i, int j) const
+\begin{DoxyCompactList}\small\item\em Accesses an element in the matrix (const version). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dense_mat_a387e37150269919b803d4e311769cfa9}{dot}} (const std\+::vector$<$ double $>$ \&x, size\+\_\+t r) const
+\begin{DoxyCompactList}\small\item\em Computes the dot product of a matrix row with a vector. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_dense_mat_a1d72219941f646e12d208d619deaf26c}{memsize}} ()
+\begin{DoxyCompactList}\small\item\em Returns the memory size of the matrix in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mat}{Mat}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mat_a1dce05d23c8e477397200f4b5639818c}{Mat}} (size\+\_\+t \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_mat}{Mat} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_mat_a9e1dcdf014562798330148bb29c2f5af}{\texorpdfstring{$\sim$}{\string~}\+Mat}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_dense_mat_a5f30b09ddef3cb007b5e3ee755bbdddb}{a}}
+\begin{DoxyCompactList}\small\item\em Coefficients, \mbox{[}nu\mbox{]}\mbox{[}nu\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_mat}{Mat}}}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}}
+\begin{DoxyCompactList}\small\item\em Number of rows (unknowns) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dense matrix class that implements the \doxylink{class_mat}{Mat} interface. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_dense_mat_a88baa8e65e5b3491c29e143c78399982}\index{DenseMat@{DenseMat}!DenseMat@{DenseMat}}
+\index{DenseMat@{DenseMat}!DenseMat@{DenseMat}}
+\doxysubsubsection{\texorpdfstring{DenseMat()}{DenseMat()}}
+{\footnotesize\ttfamily \label{class_dense_mat_a88baa8e65e5b3491c29e143c78399982} 
+Dense\+Mat\+::\+Dense\+Mat (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nu}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_dense_mat}{Dense\+Mat} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nu} & The number of rows (unknowns). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dense_mat_a55a9cd563f5c9a8a7ecc3f9844a2e844}\index{DenseMat@{DenseMat}!````~DenseMat@{\texorpdfstring{$\sim$}{\string~}DenseMat}}
+\index{````~DenseMat@{\texorpdfstring{$\sim$}{\string~}DenseMat}!DenseMat@{DenseMat}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DenseMat()}{\string~DenseMat()}}
+{\footnotesize\ttfamily \label{class_dense_mat_a55a9cd563f5c9a8a7ecc3f9844a2e844} 
+Dense\+Mat\+::\texorpdfstring{$\sim$}{\string~}\+Dense\+Mat (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \doxylink{class_dense_mat}{Dense\+Mat} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dense_mat_a387e37150269919b803d4e311769cfa9}\index{DenseMat@{DenseMat}!dot@{dot}}
+\index{dot@{dot}!DenseMat@{DenseMat}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily \label{class_dense_mat_a387e37150269919b803d4e311769cfa9} 
+double Dense\+Mat\+::dot (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x}{, }\item[{size\+\_\+t}]{r}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Computes the dot product of a matrix row with a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The vector. \\
+\hline
+{\em r} & The row index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product result.
+\end{DoxyReturn}
+$ \text{dot}(x, r) = \sum_{c=0}^{nu-1} A[r][c] \cdot x[c] $ 
+
+Implements \mbox{\hyperlink{class_mat_a2ebc142b7716103f6ff5dc62795345b8}{Mat}}.
+
+\Hypertarget{class_dense_mat_a1d72219941f646e12d208d619deaf26c}\index{DenseMat@{DenseMat}!memsize@{memsize}}
+\index{memsize@{memsize}!DenseMat@{DenseMat}}
+\doxysubsubsection{\texorpdfstring{memsize()}{memsize()}}
+{\footnotesize\ttfamily \label{class_dense_mat_a1d72219941f646e12d208d619deaf26c} 
+size\+\_\+t Dense\+Mat\+::memsize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Returns the memory size of the matrix in bytes. 
+
+\begin{DoxyReturn}{Returns}
+Size in bytes. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_mat_afc31b162b490efbcc30c4189695ae704}{Mat}}.
+
+\Hypertarget{class_dense_mat_a31fbbb963f922c8a6e55c664af85012b}\index{DenseMat@{DenseMat}!operator()@{operator()}}
+\index{operator()@{operator()}!DenseMat@{DenseMat}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_dense_mat_a31fbbb963f922c8a6e55c664af85012b} 
+double \& Dense\+Mat\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{int}]{j}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Accesses an element in the matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Row index. \\
+\hline
+{\em j} & Column index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the element at (i, j). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_mat_a0b3602ac9d9f11e15db537277e153d0b}{Mat}}.
+
+\Hypertarget{class_dense_mat_a728aef3c097f1df6aa91b244a3de373c}\index{DenseMat@{DenseMat}!operator()@{operator()}}
+\index{operator()@{operator()}!DenseMat@{DenseMat}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_dense_mat_a728aef3c097f1df6aa91b244a3de373c} 
+double Dense\+Mat\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{int}]{j}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Accesses an element in the matrix (const version). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Row index. \\
+\hline
+{\em j} & Column index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element at (i, j). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_mat_a8e66bf7344562f3adec2b47a22b9489c}{Mat}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_dense_mat_a5f30b09ddef3cb007b5e3ee755bbdddb}\index{DenseMat@{DenseMat}!a@{a}}
+\index{a@{a}!DenseMat@{DenseMat}}
+\doxysubsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily \label{class_dense_mat_a5f30b09ddef3cb007b5e3ee755bbdddb} 
+double\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Dense\+Mat\+::a\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Coefficients, \mbox{[}nu\mbox{]}\mbox{[}nu\mbox{]}. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_mat_8h}{Mat.\+h}}\end{DoxyCompactItemize}

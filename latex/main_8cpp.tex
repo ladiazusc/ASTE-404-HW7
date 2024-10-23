@@ -1,0 +1,120 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include "{}Vec.\+h"{}}\newline
+{\ttfamily \#include "{}Mat.\+h"{}}\newline
+Include dependency graph for main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_world}{World}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a806668ce7c2997e318e1fd16237312bf}{save\+VTI}} (const \mbox{\hyperlink{struct_world}{World}} \&world, const vector$<$ double $>$ \&field)
+\item 
+void \mbox{\hyperlink{main_8cpp_aa2100370580f5cd1a75945624b592aad}{solve\+GS}} (const \mbox{\hyperlink{class_mat}{Mat}} \&A, vector$<$ double $>$ \&x, const vector$<$ double $>$ \&b, int max\+\_\+it, double tol)
+\begin{DoxyCompactList}\small\item\em Solves A\texorpdfstring{$\ast$}{*}x=b using the Gauss-\/\+Seidel Successive Over-\/\+Relaxation (SOR) method. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a5b23be6ea418bf6fa05af34dcc28990c}{run\+Tests}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}args)
+\item 
+int \mbox{\hyperlink{main_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328}{main}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}args)
+\begin{DoxyCompactList}\small\item\em Main function to initialize world parameters and solve a linear system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{args}{}\end{DoxyParamCaption})}
+
+
+
+Main function to initialize world parameters and solve a linear system. 
+
+Initializes a 3D world, sets up a sparse matrix, solves a linear system using the Gauss-\/\+Seidel method, and saves the results in VTI format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command line arguments. \\
+\hline
+{\em args} & Array of command line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 0 upon successful completion. 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Initialize mesh origin
+
+\texorpdfstring{$<$}{<} Cell spacing
+
+\texorpdfstring{$<$}{<} Number of nodes in i, j, k
+
+\texorpdfstring{$<$}{<} Coefficient matrix
+
+\texorpdfstring{$<$}{<} Set 1 on the diagonal
+
+\texorpdfstring{$<$}{<} Standard 7-\/point stencilHere is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_a7a29781a20c5dd4153c3c1cecf0ff328_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cpp_a5b23be6ea418bf6fa05af34dcc28990c}\index{main.cpp@{main.cpp}!runTests@{runTests}}
+\index{runTests@{runTests}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily \label{main_8cpp_a5b23be6ea418bf6fa05af34dcc28990c} 
+int run\+Tests (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{args}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a806668ce7c2997e318e1fd16237312bf}\index{main.cpp@{main.cpp}!saveVTI@{saveVTI}}
+\index{saveVTI@{saveVTI}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{saveVTI()}{saveVTI()}}
+{\footnotesize\ttfamily \label{main_8cpp_a806668ce7c2997e318e1fd16237312bf} 
+void save\+VTI (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_world}{World}} \&}]{world}{, }\item[{const vector$<$ double $>$ \&}]{field}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_aa2100370580f5cd1a75945624b592aad}\index{main.cpp@{main.cpp}!solveGS@{solveGS}}
+\index{solveGS@{solveGS}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{solveGS()}{solveGS()}}
+{\footnotesize\ttfamily \label{main_8cpp_aa2100370580f5cd1a75945624b592aad} 
+void solve\+GS (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_mat}{Mat}} \&}]{A}{, }\item[{vector$<$ double $>$ \&}]{x}{, }\item[{const vector$<$ double $>$ \&}]{b}{, }\item[{int}]{max\+\_\+it}{, }\item[{double}]{tol}{}\end{DoxyParamCaption})}
+
+
+
+Solves A\texorpdfstring{$\ast$}{*}x=b using the Gauss-\/\+Seidel Successive Over-\/\+Relaxation (SOR) method. 
+
+This function implements the Gauss-\/\+Seidel solver for the linear system\+:   \[
+\textbf{A} \vec{x} = \vec{b}
+\]
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & Coefficient matrix. \\
+\hline
+{\em x} & Vector to hold the solution (output). \\
+\hline
+{\em b} & Right-\/hand-\/side vector. \\
+\hline
+{\em max\+\_\+it} & Maximum number of solver iterations (default\+: 10000). \\
+\hline
+{\em tol} & Solver tolerance (default\+: 1e-\/4). \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{main_8cpp_aa2100370580f5cd1a75945624b592aad_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,222 @@
+\doxysection{\+\_\+\+Field\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class___field}{}\label{class___field}\index{\_Field$<$ T $>$@{\_Field$<$ T $>$}}
+
+
+A 3D data container class that manages a 3D array of type T.  
+
+
+
+
+{\ttfamily \#include $<$Field.\+h$>$}
+
+
+
+Collaboration diagram for \+\_\+\+Field\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{class___field__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class___field_a919952d0097af29c7863a794611f5e46}{\+\_\+\+Field}} (\mbox{\hyperlink{_vec_8h_a83678aa59587bbfd18ddb831de0380b0}{int3}} \mbox{\hyperlink{class___field_a7b27bab3bb7de894074a1f812313ff2d}{nn}})
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{class___field}{\+\_\+\+Field} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class___field_a171c5c88e55c900cf721d8a08f84d298}{\texorpdfstring{$\sim$}{\string~}\+\_\+\+Field}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{class___field}{\+\_\+\+Field} object and deallocates memory. \end{DoxyCompactList}\item 
+T \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class___field_a3023a5ac44d486f4ad6d488c9e8ce757}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em Accesses the 2D array at the specified index. \end{DoxyCompactList}\item 
+const T \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class___field_a7aff2f5af57c2bb4e89d3f6560434fd2}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em Accesses the 2D array at the specified index (const version). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{_vec_8h_a83678aa59587bbfd18ddb831de0380b0}{int3}} \mbox{\hyperlink{class___field_a7b27bab3bb7de894074a1f812313ff2d}{nn}}
+\begin{DoxyCompactList}\small\item\em Dimensions of the field (3D vector) \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class___field_aebe275e246c0ccc1b9a15bf42ac7cf74}{ni}}
+\begin{DoxyCompactList}\small\item\em Size of the first dimension. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class___field_a58410dc67703294c2e6c9ffaf6ebff6a}{nj}}
+\begin{DoxyCompactList}\small\item\em Size of the second dimension. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class___field_a7398d877012381afb1fb93e8c197b66f}{nk}}
+\begin{DoxyCompactList}\small\item\em Size of the third dimension. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class___field_ac0371ef660b9385779e386ea001778d3}{data}} = nullptr
+\begin{DoxyCompactList}\small\item\em 3D array of data \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class___field_a1029de59a9f094581bbba88a05b448eb}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{class___field}{\+\_\+\+Field}}$<$ T $>$ \&o)
+\begin{DoxyCompactList}\small\item\em Outputs the contents of the field to an output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class \+\_\+\+Field$<$ T $>$}
+A 3D data container class that manages a 3D array of type T. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The data type of the elements stored in the field. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class___field_a919952d0097af29c7863a794611f5e46}\index{\_Field$<$ T $>$@{\_Field$<$ T $>$}!\_Field@{\_Field}}
+\index{\_Field@{\_Field}!\_Field$<$ T $>$@{\_Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\_Field()}{\_Field()}}
+{\footnotesize\ttfamily \label{class___field_a919952d0097af29c7863a794611f5e46} 
+template$<$typename T $>$ \\
+\mbox{\hyperlink{class___field}{\+\_\+\+Field}}$<$ T $>$\mbox{\hyperlink{class___field}{\+::\+\_\+\+Field}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_vec_8h_a83678aa59587bbfd18ddb831de0380b0}{int3}}}]{nn}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a new \doxylink{class___field}{\+\_\+\+Field} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nn} & A 3D vector representing the dimensions of the field. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class___field_a171c5c88e55c900cf721d8a08f84d298}\index{\_Field$<$ T $>$@{\_Field$<$ T $>$}!````~\_Field@{\texorpdfstring{$\sim$}{\string~}\_Field}}
+\index{````~\_Field@{\texorpdfstring{$\sim$}{\string~}\_Field}!\_Field$<$ T $>$@{\_Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}\_Field()}{\string~\_Field()}}
+{\footnotesize\ttfamily \label{class___field_a171c5c88e55c900cf721d8a08f84d298} 
+template$<$typename T $>$ \\
+\mbox{\hyperlink{class___field}{\+\_\+\+Field}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class___field}{\+\_\+\+Field}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroys the \doxylink{class___field}{\+\_\+\+Field} object and deallocates memory. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class___field_a3023a5ac44d486f4ad6d488c9e8ce757}\index{\_Field$<$ T $>$@{\_Field$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!\_Field$<$ T $>$@{\_Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class___field_a3023a5ac44d486f4ad6d488c9e8ce757} 
+template$<$typename T $>$ \\
+T \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class___field}{\+\_\+\+Field}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accesses the 2D array at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index of the first dimension. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the 2D array at index i. 
+\end{DoxyReturn}
+\Hypertarget{class___field_a7aff2f5af57c2bb4e89d3f6560434fd2}\index{\_Field$<$ T $>$@{\_Field$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!\_Field$<$ T $>$@{\_Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class___field_a7aff2f5af57c2bb4e89d3f6560434fd2} 
+template$<$typename T $>$ \\
+const T \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class___field}{\+\_\+\+Field}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accesses the 2D array at the specified index (const version). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The index of the first dimension. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the 2D array at index i (const). 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class___field_a1029de59a9f094581bbba88a05b448eb}\index{\_Field$<$ T $>$@{\_Field$<$ T $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!\_Field$<$ T $>$@{\_Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class___field_a1029de59a9f094581bbba88a05b448eb} 
+template$<$typename T $>$ \\
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{const \mbox{\hyperlink{class___field}{\+\_\+\+Field}}$<$ T $>$ \&}]{o}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Outputs the contents of the field to an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & The output stream to write to. \\
+\hline
+{\em o} & The \doxylink{class___field}{\+\_\+\+Field} object to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the output stream. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class___field_ac0371ef660b9385779e386ea001778d3}\index{\_Field$<$ T $>$@{\_Field$<$ T $>$}!data@{data}}
+\index{data@{data}!\_Field$<$ T $>$@{\_Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{class___field_ac0371ef660b9385779e386ea001778d3} 
+template$<$typename T $>$ \\
+T\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class___field}{\+\_\+\+Field}}$<$ T $>$\+::data = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+3D array of data 
+
+\Hypertarget{class___field_aebe275e246c0ccc1b9a15bf42ac7cf74}\index{\_Field$<$ T $>$@{\_Field$<$ T $>$}!ni@{ni}}
+\index{ni@{ni}!\_Field$<$ T $>$@{\_Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ni}{ni}}
+{\footnotesize\ttfamily \label{class___field_aebe275e246c0ccc1b9a15bf42ac7cf74} 
+template$<$typename T $>$ \\
+const int \mbox{\hyperlink{class___field}{\+\_\+\+Field}}$<$ T $>$\+::ni}
+
+
+
+Size of the first dimension. 
+
+\Hypertarget{class___field_a58410dc67703294c2e6c9ffaf6ebff6a}\index{\_Field$<$ T $>$@{\_Field$<$ T $>$}!nj@{nj}}
+\index{nj@{nj}!\_Field$<$ T $>$@{\_Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{nj}{nj}}
+{\footnotesize\ttfamily \label{class___field_a58410dc67703294c2e6c9ffaf6ebff6a} 
+template$<$typename T $>$ \\
+const int \mbox{\hyperlink{class___field}{\+\_\+\+Field}}$<$ T $>$\+::nj}
+
+
+
+Size of the second dimension. 
+
+\Hypertarget{class___field_a7398d877012381afb1fb93e8c197b66f}\index{\_Field$<$ T $>$@{\_Field$<$ T $>$}!nk@{nk}}
+\index{nk@{nk}!\_Field$<$ T $>$@{\_Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{nk}{nk}}
+{\footnotesize\ttfamily \label{class___field_a7398d877012381afb1fb93e8c197b66f} 
+template$<$typename T $>$ \\
+const int \mbox{\hyperlink{class___field}{\+\_\+\+Field}}$<$ T $>$\+::nk}
+
+
+
+Size of the third dimension. 
+
+\Hypertarget{class___field_a7b27bab3bb7de894074a1f812313ff2d}\index{\_Field$<$ T $>$@{\_Field$<$ T $>$}!nn@{nn}}
+\index{nn@{nn}!\_Field$<$ T $>$@{\_Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{nn}{nn}}
+{\footnotesize\ttfamily \label{class___field_a7b27bab3bb7de894074a1f812313ff2d} 
+template$<$typename T $>$ \\
+const \mbox{\hyperlink{_vec_8h_a83678aa59587bbfd18ddb831de0380b0}{int3}} \mbox{\hyperlink{class___field}{\+\_\+\+Field}}$<$ T $>$\+::nn}
+
+
+
+Dimensions of the field (3D vector) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_field_8h}{Field.\+h}}\end{DoxyCompactItemize}

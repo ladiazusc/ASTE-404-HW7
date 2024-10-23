@@ -1,0 +1,101 @@
+\doxysection{Mat.\+h File Reference}
+\hypertarget{_mat_8h}{}\label{_mat_8h}\index{Mat.h@{Mat.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include "{}Vec.\+h"{}}\newline
+Include dependency graph for Mat.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{_mat_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{_mat_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_mat}{Mat}}
+\begin{DoxyCompactList}\small\item\em Abstract base class representing a matrix. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_dense_mat}{Dense\+Mat}}
+\begin{DoxyCompactList}\small\item\em Dense matrix class that implements the \doxylink{class_mat}{Mat} interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_sparse_mat}{Sparse\+Mat}}
+\begin{DoxyCompactList}\small\item\em Sparse matrix class that implements the \doxylink{class_mat}{Mat} interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{_mat_8h_a2ec220a686d1089d40359d67ba5b99f8}{operator-\/}} (const std\+::vector$<$ double $>$ \&a, const std\+::vector$<$ double $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Implements subtraction of two vectors. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{_mat_8h_ad2db6cb36e2e4457d4eeb284031eac91}{operator+}} (const std\+::vector$<$ double $>$ \&a, const std\+::vector$<$ double $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Implements addition of two vectors. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{_mat_8h_a30a0abc9a8b1490d3b3dd582e8bafad6}{operator\texorpdfstring{$\ast$}{*}}} (const std\+::vector$<$ double $>$ \&a, double s)
+\begin{DoxyCompactList}\small\item\em Implements scaling of a vector by a scalar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_mat_8h_a30a0abc9a8b1490d3b3dd582e8bafad6}\index{Mat.h@{Mat.h}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Mat.h@{Mat.h}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{_mat_8h_a30a0abc9a8b1490d3b3dd582e8bafad6} 
+std\+::vector$<$ double $>$ operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{a}{, }\item[{double}]{s}{}\end{DoxyParamCaption})}
+
+
+
+Implements scaling of a vector by a scalar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The vector to scale. \\
+\hline
+{\em s} & The scalar value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled vector.
+\end{DoxyReturn}
+$ c = a * s = <a_1 * s, a_2 * s, a_3 * s> $ \Hypertarget{_mat_8h_ad2db6cb36e2e4457d4eeb284031eac91}\index{Mat.h@{Mat.h}!operator+@{operator+}}
+\index{operator+@{operator+}!Mat.h@{Mat.h}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{_mat_8h_ad2db6cb36e2e4457d4eeb284031eac91} 
+std\+::vector$<$ double $>$ operator+ (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{a}{, }\item[{const std\+::vector$<$ double $>$ \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Implements addition of two vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first vector. \\
+\hline
+{\em b} & The second vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of vector addition.
+\end{DoxyReturn}
+$ c = a + b = <a_1 + b_1, a_2 + b_2, a_3 + b_3> $ \Hypertarget{_mat_8h_a2ec220a686d1089d40359d67ba5b99f8}\index{Mat.h@{Mat.h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Mat.h@{Mat.h}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{_mat_8h_a2ec220a686d1089d40359d67ba5b99f8} 
+std\+::vector$<$ double $>$ operator-\/ (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{a}{, }\item[{const std\+::vector$<$ double $>$ \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Implements subtraction of two vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first vector. \\
+\hline
+{\em b} & The second vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of vector subtraction.
+\end{DoxyReturn}
+$ c = a - b = <a_1 - b_1, a_2 - b_2, a_3 - b_3> $ 

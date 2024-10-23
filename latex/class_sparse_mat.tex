@@ -1,0 +1,230 @@
+\doxysection{Sparse\+Mat Class Reference}
+\hypertarget{class_sparse_mat}{}\label{class_sparse_mat}\index{SparseMat@{SparseMat}}
+
+
+Sparse matrix class that implements the \doxylink{class_mat}{Mat} interface.  
+
+
+
+
+{\ttfamily \#include $<$Mat.\+h$>$}
+
+
+
+Inheritance diagram for Sparse\+Mat\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{class_sparse_mat__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sparse\+Mat\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{class_sparse_mat__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sparse_mat_a1d25eb68db7b1a5ee5adecdcb7ebffa2}{Sparse\+Mat}} (size\+\_\+t \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_sparse_mat}{Sparse\+Mat} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sparse_mat_a2582d3c6df2b844e9d255552237e1c6d}{\texorpdfstring{$\sim$}{\string~}\+Sparse\+Mat}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_sparse_mat}{Sparse\+Mat} object. \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{class_sparse_mat_ae5c978f85312b2564bc6a21ff875d8e1}{operator()}} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Accesses an element in the matrix. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sparse_mat_adc8ffd373ab90177417ce8be6cc53a00}{operator()}} (int i, int j) const
+\begin{DoxyCompactList}\small\item\em Accesses an element in the matrix (const version). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sparse_mat_a8e6fc1b45c361ae9aec06be2d68d9eee}{dot}} (const std\+::vector$<$ double $>$ \&x, size\+\_\+t r) const
+\begin{DoxyCompactList}\small\item\em Computes the dot product of a matrix row with a vector. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_sparse_mat_a4e84275bb5cda98bd1f862ef33f048c7}{memsize}} ()
+\begin{DoxyCompactList}\small\item\em Returns the memory size of the matrix in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mat}{Mat}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mat_a1dce05d23c8e477397200f4b5639818c}{Mat}} (size\+\_\+t \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_mat}{Mat} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_mat_a9e1dcdf014562798330148bb29c2f5af}{\texorpdfstring{$\sim$}{\string~}\+Mat}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_sparse_mat_ad75a7dfacc9848425487266af5c6cc7f}{a}}
+\begin{DoxyCompactList}\small\item\em Coefficients, \mbox{[}nu\mbox{]}\mbox{[}7\mbox{]}. \end{DoxyCompactList}\item 
+int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}{c}}
+\begin{DoxyCompactList}\small\item\em Columns in full matrix, \mbox{[}nu\mbox{]}\mbox{[}7\mbox{]}, -\/1 if not set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{class_sparse_mat_a23664a28710ce2705691e256950e249b}{max\+\_\+vals}} = 7
+\begin{DoxyCompactList}\small\item\em Max non-\/zeros per row. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_mat}{Mat}}}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}}
+\begin{DoxyCompactList}\small\item\em Number of rows (unknowns) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sparse matrix class that implements the \doxylink{class_mat}{Mat} interface. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sparse_mat_a1d25eb68db7b1a5ee5adecdcb7ebffa2}\index{SparseMat@{SparseMat}!SparseMat@{SparseMat}}
+\index{SparseMat@{SparseMat}!SparseMat@{SparseMat}}
+\doxysubsubsection{\texorpdfstring{SparseMat()}{SparseMat()}}
+{\footnotesize\ttfamily \label{class_sparse_mat_a1d25eb68db7b1a5ee5adecdcb7ebffa2} 
+Sparse\+Mat\+::\+Sparse\+Mat (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nu}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_sparse_mat}{Sparse\+Mat} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nu} & The number of rows (unknowns). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_sparse_mat_a2582d3c6df2b844e9d255552237e1c6d}\index{SparseMat@{SparseMat}!````~SparseMat@{\texorpdfstring{$\sim$}{\string~}SparseMat}}
+\index{````~SparseMat@{\texorpdfstring{$\sim$}{\string~}SparseMat}!SparseMat@{SparseMat}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SparseMat()}{\string~SparseMat()}}
+{\footnotesize\ttfamily \label{class_sparse_mat_a2582d3c6df2b844e9d255552237e1c6d} 
+Sparse\+Mat\+::\texorpdfstring{$\sim$}{\string~}\+Sparse\+Mat (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \doxylink{class_sparse_mat}{Sparse\+Mat} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sparse_mat_a8e6fc1b45c361ae9aec06be2d68d9eee}\index{SparseMat@{SparseMat}!dot@{dot}}
+\index{dot@{dot}!SparseMat@{SparseMat}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily \label{class_sparse_mat_a8e6fc1b45c361ae9aec06be2d68d9eee} 
+double Sparse\+Mat\+::dot (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x}{, }\item[{size\+\_\+t}]{r}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Computes the dot product of a matrix row with a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The vector. \\
+\hline
+{\em r} & The row index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product result.
+\end{DoxyReturn}
+$ \text{dot}(x, r) = \sum_{v=0}^{\text{max\_vals}-1} a[r][v] \cdot x[c[r][v]] $ 
+
+Implements \mbox{\hyperlink{class_mat_a2ebc142b7716103f6ff5dc62795345b8}{Mat}}.
+
+\Hypertarget{class_sparse_mat_a4e84275bb5cda98bd1f862ef33f048c7}\index{SparseMat@{SparseMat}!memsize@{memsize}}
+\index{memsize@{memsize}!SparseMat@{SparseMat}}
+\doxysubsubsection{\texorpdfstring{memsize()}{memsize()}}
+{\footnotesize\ttfamily \label{class_sparse_mat_a4e84275bb5cda98bd1f862ef33f048c7} 
+size\+\_\+t Sparse\+Mat\+::memsize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Returns the memory size of the matrix in bytes. 
+
+\begin{DoxyReturn}{Returns}
+Size in bytes. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_mat_afc31b162b490efbcc30c4189695ae704}{Mat}}.
+
+\Hypertarget{class_sparse_mat_ae5c978f85312b2564bc6a21ff875d8e1}\index{SparseMat@{SparseMat}!operator()@{operator()}}
+\index{operator()@{operator()}!SparseMat@{SparseMat}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_sparse_mat_ae5c978f85312b2564bc6a21ff875d8e1} 
+double \& Sparse\+Mat\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{int}]{j}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Accesses an element in the matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Row index. \\
+\hline
+{\em j} & Column index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the element at (i, j). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_mat_a0b3602ac9d9f11e15db537277e153d0b}{Mat}}.
+
+\Hypertarget{class_sparse_mat_adc8ffd373ab90177417ce8be6cc53a00}\index{SparseMat@{SparseMat}!operator()@{operator()}}
+\index{operator()@{operator()}!SparseMat@{SparseMat}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_sparse_mat_adc8ffd373ab90177417ce8be6cc53a00} 
+double Sparse\+Mat\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{int}]{j}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Accesses an element in the matrix (const version). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Row index. \\
+\hline
+{\em j} & Column index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element at (i, j). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_mat_a8e66bf7344562f3adec2b47a22b9489c}{Mat}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_sparse_mat_ad75a7dfacc9848425487266af5c6cc7f}\index{SparseMat@{SparseMat}!a@{a}}
+\index{a@{a}!SparseMat@{SparseMat}}
+\doxysubsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily \label{class_sparse_mat_ad75a7dfacc9848425487266af5c6cc7f} 
+double\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Sparse\+Mat\+::a\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Coefficients, \mbox{[}nu\mbox{]}\mbox{[}7\mbox{]}. 
+
+\Hypertarget{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f}\index{SparseMat@{SparseMat}!c@{c}}
+\index{c@{c}!SparseMat@{SparseMat}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily \label{class_sparse_mat_aada4bf9cbb21a34ff2fa4fb2245b092f} 
+int\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Sparse\+Mat\+::c\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Columns in full matrix, \mbox{[}nu\mbox{]}\mbox{[}7\mbox{]}, -\/1 if not set. 
+
+\Hypertarget{class_sparse_mat_a23664a28710ce2705691e256950e249b}\index{SparseMat@{SparseMat}!max\_vals@{max\_vals}}
+\index{max\_vals@{max\_vals}!SparseMat@{SparseMat}}
+\doxysubsubsection{\texorpdfstring{max\_vals}{max\_vals}}
+{\footnotesize\ttfamily \label{class_sparse_mat_a23664a28710ce2705691e256950e249b} 
+int Sparse\+Mat\+::max\+\_\+vals = 7\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [protected]}}
+
+
+
+Max non-\/zeros per row. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_mat_8h}{Mat.\+h}}\end{DoxyCompactItemize}

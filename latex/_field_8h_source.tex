@@ -1,0 +1,62 @@
+\doxysection{Field.\+h}
+\hypertarget{_field_8h_source}{}\label{_field_8h_source}\mbox{\hyperlink{_field_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_FIELD\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_FIELD\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vec_8h}{Vec.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ 3D\ data\ container}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class___field}{\_Field}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class___field_a919952d0097af29c7863a794611f5e46}{\_Field}}(\mbox{\hyperlink{struct__vec3}{int3}}\ \mbox{\hyperlink{class___field_a7b27bab3bb7de894074a1f812313ff2d}{nn}})\ :\ \mbox{\hyperlink{class___field_a7b27bab3bb7de894074a1f812313ff2d}{nn}}\{\mbox{\hyperlink{class___field_a7b27bab3bb7de894074a1f812313ff2d}{nn}}\},\ \mbox{\hyperlink{class___field_aebe275e246c0ccc1b9a15bf42ac7cf74}{ni}}\{\mbox{\hyperlink{class___field_a7b27bab3bb7de894074a1f812313ff2d}{nn}}[0]\},\ \mbox{\hyperlink{class___field_a58410dc67703294c2e6c9ffaf6ebff6a}{nj}}\{\mbox{\hyperlink{class___field_a7b27bab3bb7de894074a1f812313ff2d}{nn}}[1]\},\ \mbox{\hyperlink{class___field_a7398d877012381afb1fb93e8c197b66f}{nk}}\{\mbox{\hyperlink{class___field_a7b27bab3bb7de894074a1f812313ff2d}{nn}}[2]\}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Allocate\ memory}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class___field_ac0371ef660b9385779e386ea001778d3}{data}}\ =\ \textcolor{keyword}{new}\ T**[\mbox{\hyperlink{class___field_aebe275e246c0ccc1b9a15bf42ac7cf74}{ni}}];}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class___field_aebe275e246c0ccc1b9a15bf42ac7cf74}{ni}};\ i++)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class___field_ac0371ef660b9385779e386ea001778d3}{data}}[i]\ =\ \textcolor{keyword}{new}\ T*[\mbox{\hyperlink{class___field_a58410dc67703294c2e6c9ffaf6ebff6a}{nj}}];}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{class___field_a58410dc67703294c2e6c9ffaf6ebff6a}{nj}};\ j++)\ \mbox{\hyperlink{class___field_ac0371ef660b9385779e386ea001778d3}{data}}[i][j]\ =\ \textcolor{keyword}{new}\ T[\mbox{\hyperlink{class___field_a7398d877012381afb1fb93e8c197b66f}{nk}}];}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class___field_a171c5c88e55c900cf721d8a08f84d298}{\string~\_Field}}()\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class___field_ac0371ef660b9385779e386ea001778d3}{data}}\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Deallocates\ memory}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class___field_aebe275e246c0ccc1b9a15bf42ac7cf74}{ni}};\ i++)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{class___field_a58410dc67703294c2e6c9ffaf6ebff6a}{nj}};\ j++)\ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{class___field_ac0371ef660b9385779e386ea001778d3}{data}}[i][j];}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{class___field_ac0371ef660b9385779e386ea001778d3}{data}}[i];}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{class___field_ac0371ef660b9385779e386ea001778d3}{data}};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class___field_ac0371ef660b9385779e386ea001778d3}{data}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ \ \ \ \ T**\ \mbox{\hyperlink{class___field_a3023a5ac44d486f4ad6d488c9e8ce757}{operator[]}}(\textcolor{keywordtype}{int}\ i)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class___field_ac0371ef660b9385779e386ea001778d3}{data}}[i];\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{const}\ T**\ \mbox{\hyperlink{class___field_a7aff2f5af57c2bb4e89d3f6560434fd2}{operator[]}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{const}\ T**)\mbox{\hyperlink{class___field_ac0371ef660b9385779e386ea001778d3}{data}}[i];\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{class___field_a1029de59a9f094581bbba88a05b448eb}{operator<<}}(std::ostream\ \&out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class___field}{\_Field<T>}}\ \&o)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ o.\mbox{\hyperlink{class___field_aebe275e246c0ccc1b9a15bf42ac7cf74}{ni}};\ i++)}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ o.\mbox{\hyperlink{class___field_a58410dc67703294c2e6c9ffaf6ebff6a}{nj}};\ j++)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ o.\mbox{\hyperlink{class___field_a7398d877012381afb1fb93e8c197b66f}{nk}};\ k++)}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\ <<\ o[i][j][k]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct__vec3}{int3}}\ \mbox{\hyperlink{class___field_a7b27bab3bb7de894074a1f812313ff2d}{nn}};\ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class___field_aebe275e246c0ccc1b9a15bf42ac7cf74}{ni}};\ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class___field_a58410dc67703294c2e6c9ffaf6ebff6a}{nj}};\ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class___field_a7398d877012381afb1fb93e8c197b66f}{nk}};\ \ \ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00084\ \ \ \ \ T\ ***\mbox{\hyperlink{class___field_ac0371ef660b9385779e386ea001778d3}{data}}\ =\ \textcolor{keyword}{nullptr};\ \ }
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{comment}{//\ Type\ alias\ for\ \_Field\ with\ double\ precision}}
+\DoxyCodeLine{00088\ \textcolor{keyword}{using\ }\mbox{\hyperlink{class___field}{Field}}\ =\ \mbox{\hyperlink{class___field}{\_Field<double>}};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

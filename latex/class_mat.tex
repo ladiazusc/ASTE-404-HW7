@@ -1,0 +1,205 @@
+\doxysection{Mat Class Reference}
+\hypertarget{class_mat}{}\label{class_mat}\index{Mat@{Mat}}
+
+
+Abstract base class representing a matrix.  
+
+
+
+
+{\ttfamily \#include $<$Mat.\+h$>$}
+
+
+
+Inheritance diagram for Mat\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{class_mat__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mat_a1dce05d23c8e477397200f4b5639818c}{Mat}} (size\+\_\+t \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_mat}{Mat} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_mat_a9e1dcdf014562798330148bb29c2f5af}{\texorpdfstring{$\sim$}{\string~}\+Mat}} ()
+\item 
+virtual double \& \mbox{\hyperlink{class_mat_a0b3602ac9d9f11e15db537277e153d0b}{operator()}} (int i, int j)=0
+\begin{DoxyCompactList}\small\item\em Accesses an element in the matrix. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_mat_a8e66bf7344562f3adec2b47a22b9489c}{operator()}} (int i, int j) const =0
+\begin{DoxyCompactList}\small\item\em Accesses an element in the matrix (const version). \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_mat_a2ebc142b7716103f6ff5dc62795345b8}{dot}} (const std\+::vector$<$ double $>$ \&x, size\+\_\+t r) const =0
+\begin{DoxyCompactList}\small\item\em Computes the dot product of a matrix row with a vector. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \mbox{\hyperlink{class_mat_afc31b162b490efbcc30c4189695ae704}{memsize}} ()=0
+\begin{DoxyCompactList}\small\item\em Returns the memory size of the matrix in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \mbox{\hyperlink{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}{nu}}
+\begin{DoxyCompactList}\small\item\em Number of rows (unknowns) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_mat_aa85326505f32cb0cf01a3cb745621447}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_mat}{Mat}} \&A, const std\+::vector$<$ double $>$ \&x)
+\begin{DoxyCompactList}\small\item\em Computes the product of a matrix and a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a matrix. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mat_a1dce05d23c8e477397200f4b5639818c}\index{Mat@{Mat}!Mat@{Mat}}
+\index{Mat@{Mat}!Mat@{Mat}}
+\doxysubsubsection{\texorpdfstring{Mat()}{Mat()}}
+{\footnotesize\ttfamily \label{class_mat_a1dce05d23c8e477397200f4b5639818c} 
+Mat\+::\+Mat (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nu}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_mat}{Mat} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nu} & The number of rows (unknowns). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mat_a9e1dcdf014562798330148bb29c2f5af}\index{Mat@{Mat}!````~Mat@{\texorpdfstring{$\sim$}{\string~}Mat}}
+\index{````~Mat@{\texorpdfstring{$\sim$}{\string~}Mat}!Mat@{Mat}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Mat()}{\string~Mat()}}
+{\footnotesize\ttfamily \label{class_mat_a9e1dcdf014562798330148bb29c2f5af} 
+virtual Mat\+::\texorpdfstring{$\sim$}{\string~}\+Mat (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mat_a2ebc142b7716103f6ff5dc62795345b8}\index{Mat@{Mat}!dot@{dot}}
+\index{dot@{dot}!Mat@{Mat}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily \label{class_mat_a2ebc142b7716103f6ff5dc62795345b8} 
+virtual double Mat\+::dot (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x}{, }\item[{size\+\_\+t}]{r}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Computes the dot product of a matrix row with a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The vector. \\
+\hline
+{\em r} & The row index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product result.
+\end{DoxyReturn}
+$ \text{dot}(x, r) = \sum_{c=0}^{nu-1} A[r][c] \cdot x[c] $ 
+
+Implemented in \mbox{\hyperlink{class_dense_mat_a387e37150269919b803d4e311769cfa9}{Dense\+Mat}}, and \mbox{\hyperlink{class_sparse_mat_a8e6fc1b45c361ae9aec06be2d68d9eee}{Sparse\+Mat}}.
+
+\Hypertarget{class_mat_afc31b162b490efbcc30c4189695ae704}\index{Mat@{Mat}!memsize@{memsize}}
+\index{memsize@{memsize}!Mat@{Mat}}
+\doxysubsubsection{\texorpdfstring{memsize()}{memsize()}}
+{\footnotesize\ttfamily \label{class_mat_afc31b162b490efbcc30c4189695ae704} 
+virtual size\+\_\+t Mat\+::memsize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the memory size of the matrix in bytes. 
+
+\begin{DoxyReturn}{Returns}
+Size in bytes. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dense_mat_a1d72219941f646e12d208d619deaf26c}{Dense\+Mat}}, and \mbox{\hyperlink{class_sparse_mat_a4e84275bb5cda98bd1f862ef33f048c7}{Sparse\+Mat}}.
+
+\Hypertarget{class_mat_a8e66bf7344562f3adec2b47a22b9489c}\index{Mat@{Mat}!operator()@{operator()}}
+\index{operator()@{operator()}!Mat@{Mat}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_mat_a8e66bf7344562f3adec2b47a22b9489c} 
+virtual double Mat\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{int}]{j}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Accesses an element in the matrix (const version). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Row index. \\
+\hline
+{\em j} & Column index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element at (i, j). 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dense_mat_a728aef3c097f1df6aa91b244a3de373c}{Dense\+Mat}}, and \mbox{\hyperlink{class_sparse_mat_adc8ffd373ab90177417ce8be6cc53a00}{Sparse\+Mat}}.
+
+\Hypertarget{class_mat_a0b3602ac9d9f11e15db537277e153d0b}\index{Mat@{Mat}!operator()@{operator()}}
+\index{operator()@{operator()}!Mat@{Mat}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_mat_a0b3602ac9d9f11e15db537277e153d0b} 
+virtual double \& Mat\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{int}]{j}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Accesses an element in the matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Row index. \\
+\hline
+{\em j} & Column index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the element at (i, j). 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dense_mat_a31fbbb963f922c8a6e55c664af85012b}{Dense\+Mat}}, and \mbox{\hyperlink{class_sparse_mat_ae5c978f85312b2564bc6a21ff875d8e1}{Sparse\+Mat}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_mat_aa85326505f32cb0cf01a3cb745621447}\index{Mat@{Mat}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Mat@{Mat}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}}{operator*}}
+{\footnotesize\ttfamily \label{class_mat_aa85326505f32cb0cf01a3cb745621447} 
+std\+::vector$<$ double $>$ operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_mat}{Mat}} \&}]{A}{, }\item[{const std\+::vector$<$ double $>$ \&}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Computes the product of a matrix and a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & The matrix. \\
+\hline
+{\em x} & The vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting vector from matrix-\/vector multiplication.
+\end{DoxyReturn}
+$ b = A \cdot x $ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9}\index{Mat@{Mat}!nu@{nu}}
+\index{nu@{nu}!Mat@{Mat}}
+\doxysubsubsection{\texorpdfstring{nu}{nu}}
+{\footnotesize\ttfamily \label{class_mat_a2ac01825ae43ac2ff070b950b4ae98d9} 
+const size\+\_\+t Mat\+::nu}
+
+
+
+Number of rows (unknowns) 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_mat_8h}{Mat.\+h}}\end{DoxyCompactItemize}
